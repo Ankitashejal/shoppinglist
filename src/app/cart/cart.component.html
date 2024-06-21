@@ -1,0 +1,49 @@
+<p style="text-align:center;">Angular Shopping list!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Angular Shopping List</title>
+<h2>Shopping</h2>
+</head>
+<body><div class="box">
+<br><br><b><div class="center">
+Product: <input type="text" id="no1" [(ngModel)]="a" >
+<br><br>
+Quantity: <input type="number" id="no2" [(ngModel)]="b">
+<br><br>
+Price: <input type="number" id="no3" [(ngModel)]="c">
+<br><br>
+<button (click)="add()" id="abc">ADD</button>
+<td><button (click)="deleteall()" id="del1">Delete ALl</button></td>
+
+
+<div class="con">
+<h2>Shopping List</h2>
+<table id="list" style="text-align:center;">
+    <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Amount</th>
+        <th>Perform</th>
+        
+    </tr>
+    <tr *ngFor="let item of list" >
+        <td>{{item.a}}</td>
+
+        <td>{{item.b}}</td>
+
+        <td>{{item.c}}</td>
+        <td>{{item.amount.toFixed(2)}}</td>
+
+        <td><button (click)="delete(item.pid)" id="del">Delete</button></td>
+        
+    </tr>
+    <tr>
+      
+    </tr>
+</table>
